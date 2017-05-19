@@ -1,0 +1,137 @@
+div#header-outer {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+@media only screen and (min-width: $desktop-min-width) {
+    header#top {
+        .row {
+            padding-bottom: 4px;
+
+            #logo {
+                padding-left: 40px;
+            }
+        }
+    }
+}
+
+header#top nav > ul {
+    float: right;
+}
+
+header#top nav > ul > li.menu-item > a {
+    @include font--body;
+    font-size: 14px;
+    letter-spacing: 2.5px;
+    color: black !important;
+    text-transform: uppercase;
+
+    &:hover {
+    }
+}
+
+header#top #toggle-nav i {
+    font-size: 28px !important;
+}
+
+ul.sf-menu {
+
+    li a:hover,
+    li a:focus {
+        text-decoration: none;
+        &::after {
+            content: '';
+            display: block;
+            border-bottom: solid 2px $color-3;
+            margin-right: 2.5px; // Negate extra space after last letter in menu item caused by letter-spacing
+        }
+    }
+}
+
+
+/*
+    MOBILE
+*/
+// push content below fixed header on mobile
+@media only screen and (max-width: $mobile-max-width) {
+    #ajax-content-wrap {
+        margin-top: 40px;
+    }
+}
+
+/* Mobile header (headroom.js) */
+@media only screen and (max-width: $tablet-max-width) {
+    header#top {
+        padding: 10px 12px;
+
+        .row {
+            padding-bottom: 0;
+        }
+    }
+
+    body header#top a#logo {
+        margin-top: 0 !important;
+    }
+
+    body header#top a#logo img.retina-logo,
+    body header#top a#logo img.default-logo {
+        height: 20px !important;
+        margin-top: 0 !important;
+        top: 0 !important;
+    }
+
+    header#top.headroom {
+        position: fixed;
+        top: 0;
+        will-change: transform;
+        transition: transform 200ms linear;
+        background-color: #fff;
+    }
+    header#top.headroom--pinned {
+        transform: translateY(0%);
+    }
+    header#top.headroom--unpinned {
+        transform: translateY(-100%);
+    }
+}
+
+
+// Hamburger menu icon
+header#top #toggle-nav {
+    position: relative;
+    top: 0;
+    text-align: right;
+    margin-bottom: 0;
+    width: auto;
+
+    i {
+        line-height: 26px;
+    }
+}
+header#top #toggle-nav:hover {
+    text-decoration: none !important;
+}
+
+
+#mobile-menu {
+    background-color: #fff;
+
+    ul li.menu-item a {
+        color: #000 !important;
+        border-bottom: 1px dotted #000 !important;
+        @include font--body;
+        text-transform: uppercase;
+        font-size: 16px;
+    }
+
+    ul li.menu-item a:hover {
+        text-decoration: none !important;
+    }
+}
+
+#mobile-menu ul li:last-child {
+    padding-bottom: 0 !important;
+    a {
+        border-bottom: none !important;
+    }
+}

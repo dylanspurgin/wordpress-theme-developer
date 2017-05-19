@@ -1,0 +1,23 @@
+// ==== CONFIGURATION ==== //
+
+$site-max-width: 1200px;
+
+$container-padding-phone: 20px;
+$container-padding-tablet: 40px;
+$container-padding-desktop: 80px;
+
+// Metadata; use metadata() to access
+$_metadata: (
+  theme-name:               "My Theme"
+, theme-template:           ""
+, theme-uri:                ""
+, theme-author:             "Dylan Spurgin"
+, theme-author-uri:         "http://dylanspurgin.com"
+, theme-description:        "My new theme!"
+, theme-version:            "0.1.0"
+, theme-license:            ""
+, theme-license-uri:        ""
+, theme-tags:               ()
+, theme-text-domain:        ""
+, theme-text-domain-path:   "/languages/"
+);

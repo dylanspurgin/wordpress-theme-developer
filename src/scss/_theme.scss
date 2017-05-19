@@ -1,0 +1,111 @@
+body {
+    @include font--body;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: $color-1;
+    font-size: $font-size-md;
+}
+
+/*
+ * Elements
+ */
+a {
+    color: $color-3;
+}
+h1 {
+    @include font--heading;
+    font-size: $font-size-xxl;
+    line-height: 120%;
+}
+h2 {
+    @include font--heading;
+    font-size: $font-size-xl;
+    line-height: $font-size-xl;
+}
+dt {
+    font-weight: bold;
+}
+
+
+/*
+ * Building blocks
+ */
+.wptd--site-content {
+    h1.section-header,
+    h2.section-header {
+        margin-top: 60px;
+        text-transform: uppercase;
+        border-bottom: solid $color-4 2px;
+        color: $color-4;
+    }
+}
+
+
+.wptd--panel {
+    padding: 20px 40px;
+    background-color: $color-2;
+    border-radius: 6px;
+    border: solid 1px $color-3;
+}
+
+.wptd--table {
+    width: 100%;
+    padding: 20px 40px;
+    background-color: $color-2;
+    border-radius: 6px;
+
+    th {
+        border-bottom: solid $color-3 1px;
+        background-color: $color-2;
+    }
+    td {
+        padding: 4px 8px;
+    }
+    tr:nth-child(odd) {
+        background-color: $color-4;
+    }
+}
+
+
+// For UI elements whose children should be
+// side by side on desktop
+// and stacked on mobile/table
+.wptd--stacked-on-mobile {
+    display: flex;
+    flex-direction: row;
+    &>* {
+        flex-grow: 1;
+    }
+    &>:first-child {
+        padding-right: 40px;
+    }
+}
+@media (max-width: $mobile-max-width) {
+    .wptd--stacked-on-mobile {
+        flex-direction: column;
+        &>:first-child {
+            padding-right: 0;
+        }
+    }
+}
+
+
+/*
+ * Display helpers
+ */
+.wptd--italic {
+    font-style: italic;
+}
+.wptd--strong {
+    font-weight: bold;
+}
+@media (min-width: $tablet-min-width) {
+    .wptd--hidden-tablet {
+        display: none;
+    }
+}
+@media (max-width: $tablet-max-width) {
+    .wptd--hidden-mobile {
+        display: none;
+    }
+}

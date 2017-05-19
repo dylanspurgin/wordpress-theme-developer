@@ -1,0 +1,25 @@
+$font-size-sm: 12px;
+$font-size-md: 14px;
+$font-size-lg: 18px;
+$font-size-xl: 28px;
+$font-size-xxl: 36px;
+
+@mixin font--heading () {
+  font-family: 'Open Sans Semibold', sans-serif;
+}
+@mixin font--body () {
+  font-family: 'Roboto Regular', sans-serif;
+}
+
+
+@font-face {
+    font-family: Open Sans Semibold;
+    src: url(/wp-content/themes/my-theme/fonts/OpenSans-Semibold.ttf);
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Roboto Regular;
+    src: url(/wp-content/themes/my-theme/fonts/Roboto-Regular.ttf);
+    font-weight: normal;
+}
