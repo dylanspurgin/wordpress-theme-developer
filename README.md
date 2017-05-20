@@ -16,9 +16,9 @@ database for your WordPress install.
 * `yarn install` (or `npm install`)
 * Add your settings to `gulpconfig.js`
 * Run `gulp setup` to:
-** Install the latest version of WordPress locally
-** Create `wp-config.php` based on `gulpconfig.js` settings
-** Symlink your theme output to the WordPress themes directory
+  * Install the latest version of WordPress locally
+  * Create `wp-config.php` based on `gulpconfig.js` settings
+  * Symlink your theme output to the WordPress themes directory
 * run your project: `gulp dev`
 * Follow the WordPress setup instructions in the opened browser window
 * Activate your theme from WordPress admin panel
