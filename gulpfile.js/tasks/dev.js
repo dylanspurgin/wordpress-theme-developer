@@ -1,5 +1,3 @@
-var gulp = require('gulp'),
-    connect = require('gulp-connect-php'),
-    config = require('../../gulpconfig');
+var gulp = require('gulp');
 
-gulp.task('dev', ['watch']);
+gulp.task('dev', ['docker-up', 'watch']);
