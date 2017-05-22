@@ -1,4 +1,8 @@
 var gulp    = require('gulp'),
+    config  = require('../../gulpconfig'),
+    del     = require('del'),
+    rename  = require('gulp-rename'),
+    replace = require('gulp-replace'),
     spawn   = require('child_process').spawn;
 
 
@@ -10,21 +14,24 @@ function execCommand(command, args, cb) {
     ctx.stderr.on('data', function(data) {
         process.stderr.write(data);
     });
-    ctx.on('close', function(code) {
-        if(cb){cb(code === 0 ? null : code);}
-    })
-    process.on('SIGINT', function () {
-        killChild(ctx)
-    });
-    process.on('exit', function () {
-        killChild(ctx)
-    });
 }
 
-function killChild (child) {
-    child.kill('SIGTERM');
-}
+gulp.task('docker-config-clean', function () {
+  return del(['docker-compose.yml']);
+})
 
-gulp.task('docker-up', function () {
-    execCommand('docker-compose', ['up']);
+// Set theme directory in docker file
+gulp.task('docker-config', ['docker-config-clean'], function () {
+    return gulp.src(['docker-compose.template.yml'])
+        .pipe(replace(/DOCKER_THEME_DIR/g, config.utils.theme))
+        .pipe(rename('docker-compose.yml'))
+        .pipe(gulp.dest('./'));
+});
+
+gulp.task('docker-up', ['docker-config'], function (cb) {
+    execCommand('docker-compose', ['up'], cb);
+});
+
+gulp.task('docker-down', function (cb) {
+    execCommand('docker-compose', ['down'])
 });
