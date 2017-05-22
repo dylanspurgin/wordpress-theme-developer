@@ -6,7 +6,7 @@ var gulp = require('gulp');
 gulp.task('default', ['watch']);
 
 // Build a working copy of the theme
-gulp.task('build', ['images', 'scripts', 'styles', 'fonts', 'theme']);
+gulp.task('build', ['clean', 'images', 'scripts', 'styles', 'fonts', 'theme']);
 
 // Dist task chain: wipe -> build -> clean -> copy -> compress images
 // NOTE: this is a resource-intensive task!

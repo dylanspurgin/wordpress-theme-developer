@@ -13,10 +13,10 @@ gulp.task('install-wordpress', function () {
         base: 'http://wordpress.org/'
     })
     .pipe(decompress({strip: 1}))
-    .pipe(gulp.dest(config.wordpress.dest))
+    .pipe(gulp.dest(config.wordpress.dest));
 });
 
-gulp.task('configure-wordpress', function(){
+gulp.task('configure-wordpress', ['install-wordpress'] function(){
   return gulp.src([path.join(config.wordpress.dest, 'wp-config-sample.php')])
     .pipe(replace(/database_name_here/g, config.wordpress.db_name))
     .pipe(replace(/username_here/g, config.wordpress.db_user))
@@ -27,9 +27,11 @@ gulp.task('configure-wordpress', function(){
 });
 
 // Create symlink of build dir in wordpress theme directory
-gulp.task('link-theme', shell.task([
-  'ln -s ' + path.join(process.cwd(), config.utils.build) + ' ' + path.join(process.cwd(), config.wordpress.dest, 'wp-content/themes', config.utils.project)
-]));
+gulp.task('link-theme', ['configure-wordpress'], function () {
+    shell.task([
+        'ln -s ' + path.join(process.cwd(), config.utils.build) + ' ' + path.join(process.cwd(), config.wordpress.dest, 'wp-content/themes', config.utils.project)
+    ])
+});
 
 
-gulp.task('setup', ['install-wordpress', 'configure-wordpress', 'link-theme']);
+gulp.task('setup', ['link-theme']);
