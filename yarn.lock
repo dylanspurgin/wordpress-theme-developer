@@ -1620,6 +1620,10 @@ get-stream@^2.2.0:
     object-assign "^4.0.1"
     pinkie-promise "^2.0.0"
 
+get-stream@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/get-stream/-/get-stream-3.0.0.tgz#8e943d1358dc37555054ecbe2edb05aa174ede14"
+
 getpass@^0.1.1:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/getpass/-/getpass-0.1.7.tgz#5eff8e3e684d569ae4cb2b1282604e8ba62149fa"
@@ -2034,6 +2038,15 @@ gulp-util@*, gulp-util@^3.0, gulp-util@^3.0.0, gulp-util@^3.0.1, gulp-util@^3.0.
     replace-ext "0.0.1"
     through2 "^2.0.0"
     vinyl "^0.5.0"
+
+gulp-zip@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-zip/-/gulp-zip-4.0.0.tgz#1cefc08b4bf36df4b5b1e7c6b36ee55ebbe4a881"
+  dependencies:
+    get-stream "^3.0.0"
+    gulp-util "^3.0.0"
+    through2 "^2.0.1"
+    yazl "^2.1.0"
 
 gulp@^3.9.1:
   version "3.9.1"
@@ -5147,6 +5160,12 @@ yauzl@^2.2.1:
   dependencies:
     buffer-crc32 "~0.2.3"
     fd-slicer "~1.0.1"
+
+yazl@^2.1.0:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/yazl/-/yazl-2.4.2.tgz#14cb19083e1e25a70092c1588aabe0f4e4dd4d88"
+  dependencies:
+    buffer-crc32 "~0.2.3"
 
 yeast@0.1.2:
   version "0.1.2"
