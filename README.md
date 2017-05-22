@@ -15,8 +15,8 @@ Instructions below assume you are using [yarn](https://yarnpkg.com/) as your pac
 yarn commands may be substituted with [npm](https://www.npmjs.com/) commands if you prefer.
 
 ### 1. Fork and clone this repository
-* [Fork](https://help.github.com/articles/fork-a-repo/) this repository
-* [Clone](https://help.github.com/articles/cloning-a-repository/) your fork to your local machine
+* [Fork](https://help.github.com/articles/fork-a-repo/#fork-an-example-repository) this repository by clicking the Fork button at the top of this page.
+* [Clone](https://help.github.com/articles/cloning-a-repository/) your fork to your local machine: `git clone https://github.com/YOUR-USERNAME/YOUR-FORKED-REPOSITORY`
 
 ### 2. Install dependencies
 * [Install yarn](https://yarnpkg.com/en/docs/install)

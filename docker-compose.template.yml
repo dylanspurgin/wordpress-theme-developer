@@ -4,7 +4,7 @@ services:
   db:
      image: mysql:5.7
      volumes:
-       - db_data:/var/lib/mysql
+       - db_data_DOCKER_THEME_DIR:/var/lib/mysql
      restart: always
      environment:
        MYSQL_ROOT_PASSWORD: somewordpress
@@ -26,4 +26,4 @@ services:
     volumes:
       - ./build:/var/www/html/wp-content/themes/DOCKER_THEME_DIR:rw
 volumes:
-  db_data:
+  db_data_DOCKER_THEME_DIR:
