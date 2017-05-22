@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+
+  wordpress:
+    image: wordpress
+    ports:
+      - 8080:80
+    environment:
+      WORDPRESS_DB_PASSWORD: example
+    volumes:
+      - ./build:/var/www/html/wp-content/themes/my-theme:rw
+
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: example

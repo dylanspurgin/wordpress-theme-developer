@@ -8,8 +8,7 @@ var project     = 'my-theme',        // The directory name for your theme; chang
     assets      = './assets/',              // A staging area for assets that require processing before landing in the source folder (example: icons before being added to a sprite sheet)
     bower       = './bower_components/',    // Bower packages
     composer    = './vendor/',              // Composer packages
-    modules     = './node_modules/',        // npm packages
-    wordpress   = './wordpress';            // WordPress installation
+    modules     = './node_modules/'         // npm packages
 
 // Project settings
 module.exports = {
@@ -19,7 +18,7 @@ module.exports = {
     notify: false, // In-line notifications (the blocks of text saying whether you are connected to the BrowserSync server or not)
     open: true, // Set to false if you don't like the browser window opening automatically
     port: 3000, // Port number for the live version of the site; default: 3000
-    proxy: 'localhost:8001', // We need to use a proxy instead of the built-in server because WordPress has to do some server-side rendering for the theme to work
+    proxy: 'localhost:8080', // We need to use a proxy instead of the built-in server because WordPress has to do some server-side rendering for the theme to work
     watchOptions: {
       debounceDelay: 2000 // This introduces a small delay when watching for file change events to avoid triggering too many reloads
     }
@@ -163,14 +162,6 @@ module.exports = {
       livereload:   build+'**/*',
       fonts:        src+'fonts/**/*'
     },
-    watcher: 'livereload' // Modify this value to easily switch between BrowserSync ('browsersync') and Livereload ('livereload')
-  },
-
-  wordpress: {
-      dest: wordpress,
-      db_name: 'my-theme',
-      db_user: 'my-theme',
-      db_password: 'password',
-      db_host: '127.0.0.1:8889'
+    watcher: 'browsersync' // Modify this value to easily switch between BrowserSync ('browsersync') and Livereload ('livereload')
   }
 }

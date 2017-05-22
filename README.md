@@ -1,7 +1,9 @@
 # wordpress-theme-developer
-Starter for developing WordPress theme using the `gulp` task runner and
-`php-connect` to serve WordPress and your theme without the need for another
-webserver. HTML5Boiler plate theme is included but may be replaced with your own
+Starter for developing WordPress themes using the `gulp` task runner and
+`docker` to serve WordPress and your theme without the need for another
+webserver (No MAMP/XAMP/LAMP!).
+
+The HTML5Boilerplate theme is included but may be replaced with your own
 starter theme. This project also works well for developing child themes.
 
 Based on [wordpress-gulp-starter-kit](https://github.com/synapticism/wordpress-gulp-starter-kit)
@@ -10,33 +12,24 @@ Based on [wordpress-gulp-starter-kit](https://github.com/synapticism/wordpress-g
 Instructions below assume you are using [yarn]() as your package manager. All
 yarn commands may be substituted with [npm]() commands if you prefer npm.
 
-### First, fork and clone this repository
+### 1. Fork and clone this repository
 * [Fork](https://help.github.com/articles/fork-a-repo/) this repository
 * [Clone](https://help.github.com/articles/cloning-a-repository/) your fork to your local machine
 
-### Setup your database
-This repo includes `php-connect` for serving your WordPress instance locally but
-you will still need to install a local copy of mysql and create a user and
-database for your WordPress install.
+### 2. Install dependencies
+* [Install yarn](https://yarnpkg.com/en/docs/install)
+* Install Docker: [Mac](https://docs.docker.com/docker-for-mac/install/#download-docker-for-mac), [Win](https://docs.docker.com/docker-for-windows/install/#download-docker-for-windows), [Ubuntu](https://docs.docker.com/engine/installation/linux/ubuntu/#install-docker)
+* Install gulp: `yarn global add gulp`
+* Install project dependencies: `yarn install`
+* Add your settings to `gulpconfig.js`. At the minimum, change the project name.
 
-### Then, do the following locally
-* Install gulp globally if not already installed: `yarn global add gulp`
-* `yarn install`
-* Add your settings to `gulpconfig.js`
-** Edit `gulpconfig.js` in the root of your project
-** At the minimum, change the project name and add your database settings
-* Run `gulp setup` to:
-  * Install the latest version of WordPress locally
-  * Create `wp-config.php` based on `gulpconfig.js` settings
-  * Symlink your theme output to the WordPress themes directory
-* run your project: `gulp dev`
-* Follow the WordPress setup instructions in the opened browser window
+### 3. WordPress Setup
+* Run your project: `gulp dev`
+* Follow the WordPress setup instructions in the opened browser window (You may have to refresh the window manually if it times out the first time to give the docker image time to be ready).
 * Activate your theme from WordPress admin panel
 
 ## Usage
-Running `gulp dev` will serve your project and open it in a browser. As you make
-changes to your theme, they will be automatically rebuilt and displayed in the
-browser.
+Running `gulp dev` will serve your project and open it in a browser. Your theme files live in `/src`. As you make changes to your theme, they will be automatically rebuilt and displayed in the browser.
 
 ## Troubleshooting
 ### node-sass
